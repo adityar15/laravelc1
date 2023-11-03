@@ -11,7 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
+        // 1-1 relationship
+        // 1-many relationship
+        // never many-many
         Schema::create('users', function (Blueprint $table) {
+            // primary key 
+            // a key in table which is unique and is used to reference in other relational tables
             $table->id();
             $table->string('name');
             $table->string('email')->unique();

@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
+// users
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
@@ -22,6 +23,9 @@ class User extends Authenticatable
         'email',
         'password',
     ];
+
+    // this will fill in all the columns
+    // protected $guarded = [];
 
     /**
      * The attributes that should be hidden for serialization.
@@ -42,4 +46,6 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    // protected $table = "users_table";
 }

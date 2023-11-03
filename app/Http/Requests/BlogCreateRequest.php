@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UserDetailsRequest extends FormRequest
+class BlogCreateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,17 +22,9 @@ class UserDetailsRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "name" => ['required', 'string'],
-            "email" => ['required', 'email:rfc,dns'],
-            "password" => ['required', 'min:6', 'max:12']
-        ];
-    }
-
-    public function messages() : array
-    {
-        return [
-            "email.required" => "Please enter your email",
-            "email.email" => "Please enter a valid email address"
+            'title' => ['required', 'string', 'max:255'],
+            'article' => ['required', 'string', 'max:5000'],
+            'email' => ['required', 'email:rfc,dns', 'exists:users,email']
         ];
     }
 }
