@@ -18,6 +18,20 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [RegisterController::class, 'show']);
+Route::post("/register", [UserController::class, 'register']);
+
+
+
+// Route::get('/login', [RegisterController::class, 'showLoginPage']);
+// provided you just want to show the login page (or any page) and do not want to run additional logic like db queries, etc
+Route::inertia('/login', 'Login');
+
+Route::post("/login", [UserController::class, 'login']);
+
+
+Route::inertia('/dashboard', 'Dashboard');
+
+
 
 Route::get('/blog', function () {
     return view('blog');
@@ -27,7 +41,6 @@ Route::get('/blog', function () {
 
 Route::get('/about', [TestController::class, 'showAboutPage'])->name('about');
 Route::get("/about/{name}", [TestController::class, 'showAboutDetails']);
-Route::post("/register", [UserController::class, 'register']);
 Route::post("/create-blog", [UserController::class, 'createBlogArticle']);
 
 

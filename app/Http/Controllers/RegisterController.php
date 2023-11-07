@@ -9,6 +9,9 @@ class RegisterController extends Controller
 {
     public function show(Request $request)
     {
+        // dd(auth()->user());
         return Inertia::render('Register');
     }
+
+    
 }
