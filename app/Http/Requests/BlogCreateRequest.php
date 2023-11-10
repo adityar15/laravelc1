@@ -24,7 +24,8 @@ class BlogCreateRequest extends FormRequest
         return [
             'title' => ['required', 'string', 'max:255'],
             'article' => ['required', 'string', 'max:5000'],
-            'email' => ['required', 'email:rfc,dns', 'exists:users,email']
+            'slug' => ['required', 'string', 'max:255', 'unique:blogs,slug'],
+            'email' => ['sometimes', 'email:rfc,dns', 'exists:users,email']
         ];
     }
 }

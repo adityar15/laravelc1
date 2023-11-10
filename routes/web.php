@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\UserController;
@@ -33,10 +34,10 @@ Route::inertia('/dashboard', 'Dashboard');
 
 
 
-Route::get('/blog', function () {
-    return view('blog');
-});
+Route::get('/blogs', [BlogController::class, 'show']);
 
+Route::post('/blog', [BlogController::class, 'createArticle']);
+Route::get("/blog/{slug}", [BlogController::class, 'showArticle']);
 
 
 Route::get('/about', [TestController::class, 'showAboutPage'])->name('about');
