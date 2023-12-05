@@ -5,6 +5,7 @@ export default {
     "./resources/**/*.js",
     "./resources/**/*.jsx",
     "./resources/**/*.vue",
+    "./resources/**/*.css",
   ],
   theme: {
     extend: {},

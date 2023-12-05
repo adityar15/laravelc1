@@ -15,7 +15,7 @@ export default function Login() {
         e.preventDefault()
         post('/login', {
             onSuccess: () => {
-                setError('email', "Invalid email or password")
+                setError('emeil', "Invalid email or password")
                 // logic to redirect
                 // anything you want to run on successful form submission
 
@@ -31,10 +31,10 @@ export default function Login() {
             </Head>
             <form className="flex flex-col max-w-md mx-auto py-10" onSubmit={handleSubmit}>
                 <FormGroup errorMessage={errors.email} label="Email" type="email" value={data.email} onChange={e => setData('email', e.target.value)} name="email" />
-                
+
                 <FormGroup errorMessage={errors.password} label="Password" type="password" name="password" value={data.password} onChange={e => setData('password', e.target.value)} />
 
-                <button disabled={processing} className="bg-blue-500 px-5 py-3 text-gray-50 rounded-md my-4">Sign In</button>
+                <button disabled={processing} className="custom-button-style font-bold">Sign In</button>
             </form>
         </>
     )

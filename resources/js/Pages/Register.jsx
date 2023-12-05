@@ -36,7 +36,7 @@ export default function Register() {
 
                 {success && <span className='text-green-500 text-lg'>You have signed up successfully</span>}
 
-                <button disabled={processing} className="bg-blue-500 px-5 py-3 text-gray-50 rounded-md my-4">Sign Up</button>
+                <button disabled={processing} className="custom-button-style">Sign Up</button>
             </form>
         </>
     )

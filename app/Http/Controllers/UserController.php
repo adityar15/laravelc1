@@ -49,7 +49,7 @@ class UserController extends Controller
         //     return true
         // }
 
-        $isCorrectUser = Auth::attempt(['email' => $validatedData['email'], 'password' => $validatedData['password']]);
+        $isCorrectUser = Auth::attempt(['email' => $validatedData['email'], 'pwd' => $validatedData['password']]);
 
         if($isCorrectUser)
         {
