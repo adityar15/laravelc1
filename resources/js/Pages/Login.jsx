@@ -15,7 +15,7 @@ export default function Login() {
         e.preventDefault()
         post('/login', {
             onSuccess: () => {
-                setError('emeil', "Invalid email or password")
+                setError('email', "Invalid email or password")
                 // logic to redirect
                 // anything you want to run on successful form submission
 

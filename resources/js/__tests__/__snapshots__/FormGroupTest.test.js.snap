@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the FormGroup with props 1`] = `
+<div
+  className="flex flex-col gap-2 test-class"
+>
+  <label
+    className="text-lg font-semibold text-gray-800"
+  >
+    Test Label
+  </label>
+  <input
+    className="border border-gray-600 rounded-md p-2"
+    name="testName"
+    placeholder="Enter text"
+    type="text"
+  />
+  <span
+    className="text-red-500 text-sm"
+  >
+    Test error message
+  </span>
+</div>
+`;
